@@ -7,8 +7,12 @@
 </style>
 <script language="javascript" type="text/javascript">
 function autoPlay(){
-var myAuto = document.getElementByIdx_x("myaudio");
+var myAuto = document.getElementById("myaudio");
 myAuto.play();
+}
+function autoStop(){
+var myAuto= document.getElementById("myaudio");
+myAuto.pause();
 }
 </script>
 </head>
@@ -21,6 +25,7 @@ myAuto.play();
 <br/><hr/><br/><br/><br/>
 <div id="music"><audio id="myaudio" src="music/spyair.MP3" controls="controls" width="300"height="100"volume="10"loop="true"></audio><br/>
 <input type="button" onclick="autoPlay()" value='播放'/>
+<input type="button" onclick="autoStop()" value="暂停"/>
 </div>
 
 <br/><br/>
