@@ -6,6 +6,7 @@
 	#pic{text-align:center;}#music{text-align:center;border:1px solid #050;width:310;height:70;margin:0 auto;}
 .image{filter:gray;}
 .link{text-decoration:none;}
+#song{font-size:28px;}
 </style>
 <script language="javascript" type="text/javascript">
 function autoPlay(){
@@ -16,6 +17,16 @@ function autoStop(){
 var myAuto= document.getElementById("myaudio");
 myAuto.pause();
 }
+</script>
+<script src="jquery/jquery-3.1.1.js"></script>
+<script src="js/songs.js"></script>
+<script>
+$(function(){
+$('#song a').click(function(e){
+$('#myaudio').attr("src", songSrc[this.text]); 
+ $('#myaudio')[0].play();});
+$('#myaudio')[0].play();
+});
 </script>
 </head>
 <body text="#00FF00"bgcolor="#00ffff" ><br/><br/><br/>
@@ -28,8 +39,12 @@ myAuto.pause();
 <div id="music"><audio id="myaudio" src="http://v2.huangguofeng.com/pcs_download.php?id=31971&link=%2Fapps%2Fhgf_blog%2Fmusic%2FChara+%28%E4%BD%90%E8%97%A4%E7%BE%8E%E5%92%8C%29+-+%E7%89%87%E6%83%B3%E3%81%84+%28%E5%8D%95%E6%81%8B%29+%5Bmqms2%5D.mp3" controls="controls" width="300"height="100"volume="10"loop="true"></audio><br/>
 <input type="button" onclick="autoPlay()" value='播放'/>
 <input type="button" onclick="autoStop()" value="暂停"/>
+</div><br/>
+<div id="song"align="center" >
+<a href="#">spyair.mp3</a><br/>
+<a href="#">好想大声说喜欢你.mp3</a><br/>
+<a href="#">暧昧-王菲.mp3</a>
 </div>
-
 <br/><br/>
 <div id="link_1">
 <a class="link"href="https://zszsrex.github.io/git常用命令.html">git常用命令</a>
